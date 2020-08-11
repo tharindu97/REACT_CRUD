@@ -1,10 +1,34 @@
 import React from 'react';
+
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+import NavBar from './components/NavBar';
+import HomeScreen from './screens/HomeScreen';
+import AddScreen from './screens/AddScreen';
+import EditScreen from './screens/EditScreen';
+
 
 function App() {
   return (
     <div className="App">
-      <h2>panama</h2>
+      <Router>
+        <div>
+        <NavBar />
+          <Switch>
+            <Route path="/add">
+              <AddScreen />
+            </Route>
+            <Route path="/edit/:id">
+              <EditScreen />
+            </Route>
+            <Route path="/">
+              <HomeScreen />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
     </div>
   );
 }
