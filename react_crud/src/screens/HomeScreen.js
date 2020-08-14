@@ -34,12 +34,13 @@ const HomeScreen = () => {
     }
 
     return (
-        <Container>
+        <Container style={{ padding : 16 }} >
             <Row>
 
                 {photos.slice(0,50).map(photoItem => (
                     <PhotoItem 
                           key={photoItem.id}
+                          id={photoItem.id}
                           title={photoItem.title}
                           thumbnailUrl={photoItem.thumbnailUrl}              
                     />
